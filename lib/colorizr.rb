@@ -15,17 +15,21 @@ class String
 	  @@colorizr_colors.keys
 	end
   
-  class_eval do
-  	def color(code)
-  		"\e[#{code}m#{to_s}\e[0m"
-  	end
-  	@@colorizr_colors.each do |color, code|
-  		class_eval "def #{color}; color #{code}; end"
-  	end
-  end
+  def self.create_colors
+	  class_eval do
+	  	def color(code)
+	  		"\e[#{code}m#{to_s}\e[0m"
+	  	end
+	  	@@colorizr_colors.each do |color, code|
+	  		class_eval "def #{color}; color #{code}; end"
+	  	end
+	  end
+	end
 end
 
 String.instance_eval do
+	self.create_colors
+
 	def sample_colors
 		colors.each do |s|
 			puts "This is " + "#{s}".send(s)
