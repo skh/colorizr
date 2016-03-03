@@ -5,11 +5,16 @@ class String
 		green: 32,
 		yellow: 33,
 		blue: 34,
-		pink: 35,
 		light_gray: 37,
 		light_blue: 94,
+		pink: 95,
 		white: 97
 	})
+
+	def self.colors
+	  @@colorizr_colors.keys
+	end
+  
   class_eval do
   	def color(code)
   		"\e[#{code}m#{to_s}\e[0m"
@@ -19,3 +24,4 @@ class String
   	end
   end
 end
+
