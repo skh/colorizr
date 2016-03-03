@@ -25,3 +25,10 @@ class String
   end
 end
 
+String.instance_eval do
+	def sample_colors
+		colors.each do |s|
+			puts "This is " + "#{s}".send(s)
+		end
+	end
+end
