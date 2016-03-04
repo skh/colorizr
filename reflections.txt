@@ -1,0 +1,11 @@
+How does your gem take advantage of Ruby’s metaprogramming capabilities?
+I use class_eval and instance_eval to add methods and enhance Ruby's own String class
+
+How long did you spend working on this project?
+1-2 hours
+
+What was the most rewarding challenge you conquered?
+Finding out how little code is necessary to solve the task
+
+Where do you still have room to grow?
+Writing more elaborate reflections ;-)
