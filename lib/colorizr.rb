@@ -18,7 +18,7 @@ class String
   def self.create_colors
 	  class_eval do
 	  	def color(code)
-	  		"\e[#{code}m#{to_s}\e[0m"
+	  		"\e[#{code}m#{to_s}\e[39m"
 	  	end
 	  	@@colorizr_colors.each do |color, code|
 	  		class_eval "def #{color}; color #{code}; end"
